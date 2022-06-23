@@ -1,0 +1,53 @@
+<span class="title">Расписание занятости оборудования</span>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Номер кабинета</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <button mat-raised-button color="primary"> Подтвердить</button>
+  </div>
+  <table>
+    <caption class="title">Расписание использования оборудования</caption>
+    <tr>
+      <th>Время</th>
+      <th>Врач</th>
+      <th>Оборудование</th>
+    </tr>
+  </table>
+
+  <span class="title">Добавить запись о использовании оборудования оборудования</span>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Номер кабинета</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <button mat-raised-button color="primary"> Подтвердить</button>
+  </div>
+  <p>введите дату и время</p>
+  <input  id="datetime" type="datetime-local">
+  <button mat-raised-button color="primary"> Создать запись</button>
+
+  <span class="title">Сообщить о проблеме</span>
+  <p>отправка оборудования на ремонт</p>
+  <select>
+    <option>Пункт 1</option>
+    <option>Пункт 2</option>
+  </select>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Номер кабинета</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <button mat-raised-button color="primary"> Подтвердить</button>
+  </div>
+  <mat-form-field appearance="outline">
+  <mat-label>Описание проблемы</mat-label>
+  <input matInput>
+  </mat-form-field>
+
+  <span class="title">справка о эксплуатции оборудования</span>
+  <p>Выберете оборудование</p>
+  <select>
+    <option>Пункт 1</option>
+    <option>Пункт 2</option>
+  </select>
