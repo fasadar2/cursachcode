@@ -1,0 +1,18 @@
+micronaut:
+  server:
+    port: 8081
+    cors:
+      enabled: true
+      web:
+        allowedOrigins:
+          http://localhost:4200/
+        allowedMethods:
+          - POST
+          - PUT
+          - GET
+  application:
+    name: micronauttest
+netty:
+  default:
+    allocator:
+      max-order: 3
