@@ -1,6 +1,5 @@
 import {Component, Inject, Injectable, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-//import {StoreRouterConfig} from "@ngrx/router-store";
 import axios from 'axios';
 
 @Component({
@@ -19,14 +18,6 @@ export class LoginComponent implements OnInit {
     this.routing = router;
     this.route = route;
   }
-
-
-
-
-
-
-
-
 
   ngOnInit(): void {}
 

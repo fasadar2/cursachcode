@@ -196,6 +196,41 @@ export class EnginerPageComponent implements OnInit {
       });
   }
 
+  PostRec() {
+    const config = {
+      url: 'http://localhost:8081/machine/recomendation',
+
+    };
+    const id :HTMLInputElement = document.getElementById('ser') as HTMLInputElement;
+    const recomendation :HTMLInputElement = document.getElementById('rec') as HTMLInputElement;
+    const data = {
+      serial: id.value,
+      recomendation: recomendation.value
+    }
+    console.log(data);
+    axios.post(config.url, data, { headers: { 'x-mock-match-request-body': true } })
+      .then((response) => {
+        console.log(response);
+        if (response.data == 1) {
+          alert('Успешно!');
+        }
+        if(response.data == 2){
+          alert('Проверьте написание, возможно id написан неверно')
+        }
+        if(response.data == 3){
+          alert('Несуществующий ID')
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        alert('Ошибка сервера');
+      });
+
+
+  }
+
+
+
   RedirectMachine(){
     this.routing.navigate(['enginerpage'])
   }

@@ -17,6 +17,18 @@
         <button mat-raised-button color="primary" class = "wrap-down_b"on-click="PostFuck();">Проверка не пройдена</button>
 
     </div>
+    <div class = "block">
+      <mat-form-field appearance="outline">
+        <mat-label>Введите серийный номер оборудования</mat-label>
+        <input matInput id = "ser" >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Введите Рекомендацию</mat-label>
+        <input matInput id = "rec" >
+      </mat-form-field>
+      <button mat-raised-button color="primary" class = "wrap-down_b"on-click="PostRec();">Подтвердить</button>
+    </div>
 
     <div class = "block">
       <span class="title">Добавить информацию о последнемм ТО</span>
