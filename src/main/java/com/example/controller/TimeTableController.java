@@ -26,7 +26,7 @@ public class TimeTableController {
 
             try{
                 Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/medicalservice", "god", "jhy2b5sv89pthbn");
-                String sql = "select * from medicalservice.timetable join medicalservice.cabinet as cab on timetable.idcabinet = cab.id join medicalservice.machine as mac on timetable.machineid = mac.id join medicalservice.machinetype as type on mac.typeid = type.id where idpersonal = ?";
+                String sql = "select * from medicalservice.timetable join medicalservice.cabinet as cab on timetable.idcabinet = cab.id join medicalservice.machine as mac on timetable.machineid = mac.id join medicalservice.machinetype as type on mac.typeid = type.id where idpersonal = ? ORDER BY date DESC";
                 PreparedStatement ps = conn.prepareStatement(sql);
                 Format formatter = new SimpleDateFormat("yyyy-MM-dd/HH:mm");
                 ps.setInt(1,login.getPersonalId());

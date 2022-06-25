@@ -73,7 +73,8 @@ public class ServiceMachineController {
                 service.setStatus(resultSet.getString("status"));
                 service.setSerial(resultSet.getString("serial"));
                 service.setDos(formatter.format(resultSet.getDate("dos")));
-                service.setDose(formatter.format(resultSet.getDate("dose")));
+                if(resultSet.getDate("dose") != null){
+                service.setDose(formatter.format(resultSet.getDate("dose")));}
                 dfx.add(service);
             }
 
