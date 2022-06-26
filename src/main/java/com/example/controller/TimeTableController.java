@@ -20,7 +20,7 @@ public class TimeTableController {
 
     @Get(value="/timetable")
     public ArrayList<DoctorTableModel> timetable() {
-        ArrayList<DoctorTableModel> dfx = new ArrayList<>();
+        ArrayList<DoctorTableModel> timetable = new ArrayList<>();
 
 
 
@@ -37,7 +37,7 @@ public class TimeTableController {
                     doctorTableModel.setCabinet(resultSet.getString("name"));
                     doctorTableModel.setMachinename(resultSet.getString(18));
                     doctorTableModel.setDate(formatter.format(resultSet.getTimestamp("date")));
-                    dfx.add(doctorTableModel);
+                    timetable.add(doctorTableModel);
                 }
 
 
@@ -46,7 +46,7 @@ public class TimeTableController {
             }
 
 
-        return dfx ;
+        return timetable ;
     }
 
 }
