@@ -34,7 +34,7 @@ public class ServiceMachineController {
     private  LoginService login;
 
     @Post(value = "/machine", consumes = MediaType.APPLICATION_JSON)
-    public int login(@Body ServiceMachine serviceMachine) {
+    public int PostNewMachineService(@Body ServiceMachine serviceMachine) {
         return serviceMachineService.GetId(
                 serviceMachine.getId(),
                 serviceMachine.getErrorid(),
@@ -45,7 +45,7 @@ public class ServiceMachineController {
     }
 
     @Post(value = "/updatemachine", consumes = MediaType.APPLICATION_JSON)
-    public int update(@Body ServiceMachine serviceMachine) {
+    public int PostUpdate(@Body ServiceMachine serviceMachine) {
 
         return serviceMachineService.GetId2(
                 serviceMachine.getId(),
@@ -55,8 +55,8 @@ public class ServiceMachineController {
     }
 
     @Get(value = "/servicemachinelist")
-    public ArrayList<ServiceMachineModel> table(){
-        ArrayList<ServiceMachineModel> dfx = new ArrayList<>();
+    public ArrayList<ServiceMachineModel> GetServiceMachine(){
+        ArrayList<ServiceMachineModel> serviceMachine = new ArrayList<>();
 
         try{
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/medicalservice", "god", "jhy2b5sv89pthbn");
@@ -75,7 +75,7 @@ public class ServiceMachineController {
                 service.setDos(formatter.format(resultSet.getDate("dos")));
                 if(resultSet.getDate("dose") != null){
                 service.setDose(formatter.format(resultSet.getDate("dose")));}
-                dfx.add(service);
+                serviceMachine.add(service);
             }
 
 
@@ -86,7 +86,7 @@ public class ServiceMachineController {
 
 
 
-        return dfx;
+        return serviceMachine;
 
     }
 

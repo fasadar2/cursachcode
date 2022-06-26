@@ -13,7 +13,7 @@ public class NewMachineController {
     private NewMachineService newMachineService;
 
     @Post(value = "/machine", consumes = MediaType.APPLICATION_JSON)
-    public int login(@Body NewMachine machine) {
+    public int PostNewMachine(@Body NewMachine machine) {
 
         return newMachineService.GetId(
                 machine.getMachine(),

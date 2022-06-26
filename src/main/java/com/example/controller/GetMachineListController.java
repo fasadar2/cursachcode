@@ -18,9 +18,9 @@ public class GetMachineListController {
 
 
     @Get("/machinelist")
-    public ArrayList<MachineListModel> greet() {
+    public ArrayList<MachineListModel> GetMachineList() {
 
-         ArrayList<MachineListModel> dfx = new ArrayList<>();
+         ArrayList<MachineListModel> machineList = new ArrayList<>();
 
         try{
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/medicalservice", "god", "jhy2b5sv89pthbn");
@@ -36,12 +36,12 @@ public class GetMachineListController {
                Date date = resultSet.getDate("lastservice");
                if(date !=null){
                 machine.setLastTO(formatter.format(date));}else{machine.setLastTO("");}
-                dfx.add(machine);
+                machineList.add(machine);
             }
 
 
     } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return dfx;
+        return machineList;
     }}

@@ -21,7 +21,7 @@ public class MachineStatusController {
     private UpdateRecomendationService updateRecomendationService;
 
     @Post(value = "/status", consumes = MediaType.APPLICATION_JSON)
-    public int login(@Body  MachineID machineID) {
+    public int PostMachineStatus(@Body  MachineID machineID) {
 
         return machineIDService.GetId(machineID.getMachineID(), machineID.getIs()) ;
     }

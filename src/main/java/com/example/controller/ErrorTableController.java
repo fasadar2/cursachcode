@@ -14,8 +14,8 @@ import java.util.ArrayList;
 @Controller("/get")
 public class ErrorTableController {
     @Get("/errortable")
-    public ArrayList<ErrorTableModel> greet() {
-        ArrayList<ErrorTableModel> dfx = new ArrayList<>();
+    public ArrayList<ErrorTableModel> GetErrorTable() {
+        ArrayList<ErrorTableModel> errortable = new ArrayList<>();
 
         try{
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/medicalservice", "god", "jhy2b5sv89pthbn");
@@ -30,7 +30,7 @@ public class ErrorTableController {
                 error.setMachinenumber(resultSet.getString("serial"));
                 error.setMessage(resultSet.getString("message"));
                 error.setNameDoctor(resultSet.getString("firstname")+" "+resultSet.getString("secondname")+" "+resultSet.getString("thirdname"));
-                dfx.add(error);
+                errortable.add(error);
             }
 
 
@@ -41,6 +41,6 @@ public class ErrorTableController {
 
 
 
-        return dfx;
+        return errortable;
     }
 }

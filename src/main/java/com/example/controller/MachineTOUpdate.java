@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @Controller("/machine")
 public class MachineTOUpdate {
     @Post(value = "/to", consumes = MediaType.APPLICATION_JSON)
-    public int login(@Body MachineTO machine) {
+    public int PostTOSet(@Body MachineTO machine) {
         int request = 0;
         try{
             int answer = 0;
