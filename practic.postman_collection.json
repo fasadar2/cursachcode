@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "ba5b00f4-4a63-4887-911f-690e3b75a96a",
+		"name": "practic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19829921"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "getMachineList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/machineTable",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"machineTable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getErrorList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/getErrorList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"getErrorList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getServiceList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/getServiceList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"getServiceList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTimeTableList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/getTimeTableList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"getTimeTableList"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"eng0001\",\r\n    \"password\":\"0F0F\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "login",
+									"value": "eng0001",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "0F0F",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MachineStatusUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serial\":12,\r\n    \"status\":\"Исправно\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/machineUpdateStatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"machineUpdateStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MachineUpdateRecomendation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serial\":12,\r\n    \"recomendation\":\"не ронять\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/machineUpdateRecomendation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"machineUpdateRecomendation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MachineTOUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serial\":2,\r\n    \"date\":\"2022-07-25\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/machineTOUpdate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"machineTOUpdate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostNewMachine",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serial\" : 21,\r\n    \"type\":\"МРТ\",\r\n    \"DSE\":\"2022-07-22\",\r\n    \"DEE\":\"2025-08-22\",\r\n    \"recomendation\": \"не ронять\",\r\n    \"dateNTO\":\"2022-07-25\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/newMachine",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"newMachine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NewServiceMachine",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\" : \"Поступило\",\r\n    \"machineId\":3,\r\n    \"TOEE\":\"2022-07-22\",\r\n    \"TOES\":\"2025-08-22\"\r\n    \r\n    \r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/NewServiceMachine",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"NewServiceMachine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateServiceMachine",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"починим\",\r\n    \"id\":8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/UpdateServiceMachine",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"UpdateServiceMachine"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
