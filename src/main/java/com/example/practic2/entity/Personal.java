@@ -17,15 +17,16 @@ public class Personal {
 
     @Column(name = "firstname", nullable = false)
     @Type(type = "org.hibernate.type.TextType")
-    private String firstname;
+    //todo имя поля (и ниже по коду) camelCase
+    private String firstName;
 
     @Column(name = "secondname", nullable = false)
     @Type(type = "org.hibernate.type.TextType")
-    private String secondname;
+    private String secondName;
 
     @Column(name = "thirdname")
     @Type(type = "org.hibernate.type.TextType")
-    private String thirdname;
+    private String thirdName;
 
     @Column(name = "\"position\"", nullable = false)
     @Type(type = "org.hibernate.type.TextType")
@@ -43,27 +44,27 @@ public class Personal {
     }
 
     public String getFirstname() {
-        return firstname;
+        return firstName;
     }
 
     public void setFirstname(String firstname) {
-        this.firstname = firstname;
+        this.firstName = firstname;
     }
 
     public String getSecondname() {
-        return secondname;
+        return secondName;
     }
 
     public void setSecondname(String secondname) {
-        this.secondname = secondname;
+        this.secondName = secondname;
     }
 
     public String getThirdname() {
-        return thirdname;
+        return thirdName;
     }
 
     public void setThirdname(String thirdname) {
-        this.thirdname = thirdname;
+        this.thirdName = thirdname;
     }
 
     public String getPosition() {

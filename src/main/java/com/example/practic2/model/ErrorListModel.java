@@ -1,7 +1,9 @@
 package com.example.practic2.model;
 
-import java.time.LocalDate;
+import lombok.Builder;
 
+import java.time.LocalDate;
+@Builder
 public class ErrorListModel {
     private String firstname;
     private String secondname;
@@ -11,18 +13,8 @@ public class ErrorListModel {
     private LocalDate date;
     private Integer serial;
     private String message;
+//todo используй шаблон Builder для удобного создания объектов этого класса
 
-    public ErrorListModel(String firstname,String secondname,String thirdname,Integer id,String cabinetnumber,LocalDate date,Integer serial, String message){
-        this.firstname = firstname;
-        this.secondname = secondname;
-        this.thirdname = thirdname;
-        this.id = id;
-        this.cabinetnumber = cabinetnumber;
-        this.date = date;
-        this.serial = serial;
-        this.message = message;
-    }
-    public ErrorListModel(){}
 
     public String getFirstname() {
         return firstname;

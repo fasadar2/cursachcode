@@ -12,5 +12,5 @@ public class ErrorListService {
     @Autowired
     ErrorListDAO errorListDAO;
 
-    public List<ErrorListModel> GetErrorList(){return errorListDAO.getErrorList();}
+    public List<ErrorListModel> getErrorList(){return errorListDAO.getErrorList();}
 }

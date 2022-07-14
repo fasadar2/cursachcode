@@ -15,15 +15,16 @@ public class Servicemachine {
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "engineerid", nullable = false)
-    private Personal engineerid;
+    //todo имя поля (и ниже по коду) camelCase
+    private Personal engineerId;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "machineid", nullable = false)
-    private Machine machineid;
+    private Machine machineId;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "errormessageid")
-    private Erorrmessage errormessageid;
+    private Erorrmessage errorMessageid;
 
     @Column(name = "status")
     @Type(type = "org.hibernate.type.TextType")
@@ -44,27 +45,27 @@ public class Servicemachine {
     }
 
     public Personal getEngineerid() {
-        return engineerid;
+        return engineerId;
     }
 
     public void setEngineerid(Personal engineerid) {
-        this.engineerid = engineerid;
+        this.engineerId = engineerid;
     }
 
     public Machine getMachineid() {
-        return machineid;
+        return machineId;
     }
 
     public void setMachineid(Machine machineid) {
-        this.machineid = machineid;
+        this.machineId = machineid;
     }
 
     public Erorrmessage getErrormessageid() {
-        return errormessageid;
+        return errorMessageid;
     }
 
     public void setErrormessageid(Erorrmessage errormessageid) {
-        this.errormessageid = errormessageid;
+        this.errorMessageid = errormessageid;
     }
 
     public String getStatus() {

@@ -26,8 +26,9 @@ public class ServiceMachineDAO {
     PersonalRepository personalRepository;
 @Autowired
     MachineRepository machineRepository;
+
     @Transactional
-    public void NewMachineService(String status, Integer id, Integer errorId, LocalDate TOSS,LocalDate TOES) {
+    public void newMachineService(String status, Integer id, Integer errorId, LocalDate TOSS,LocalDate TOES) {
         Servicemachine servicemachine = new Servicemachine();
         servicemachine.setDos(TOSS);
         servicemachine.setDose(TOES);
@@ -41,22 +42,21 @@ public class ServiceMachineDAO {
     @Transactional
     public List<ServiceMachineListModel> serviceMachineListModels(){
         List<Servicemachine> servicemachines = (List<Servicemachine>) serviceMachineRepository.findAll();
-        List<ServiceMachineListModel> serviceMachineListModels = servicemachines.stream().map(servicemachine -> new ServiceMachineListModel(
-
-                servicemachine.getEngineerid().getFirstname(),
-                servicemachine.getEngineerid().getSecondname(),
-                servicemachine.getEngineerid().getThirdname(),
-                servicemachine.getMachineid().getSerial(),
-                servicemachine.getId(),
-                servicemachine.getStatus(),
-                servicemachine.getDos(),
-                servicemachine.getDose()
-
-                )).collect(Collectors.toList());
+        List<ServiceMachineListModel> serviceMachineListModels = servicemachines.stream().map(servicemachine ->ServiceMachineListModel.builder()
+                .firstName(servicemachine.getEngineerid().getFirstname())
+                .secondName( servicemachine.getEngineerid().getSecondname())
+                .thirdName(servicemachine.getEngineerid().getThirdname())
+                .serial(servicemachine.getMachineid().getSerial())
+                .id(servicemachine.getId())
+                .status(servicemachine.getStatus())
+                .dos(servicemachine.getDos())
+                .dose(servicemachine.getDose())
+                .build()).collect(Collectors.toList());
         return serviceMachineListModels;
     }
+
 @Transactional
-public void UpdateServicemachine(String status,Integer id,LocalDate TOES){
+public void updateServicemachine(String status,Integer id,LocalDate TOES){
         Servicemachine servicemachine= serviceMachineRepository.findServicemachineById(id);
         if(!status.isEmpty()){
             servicemachine.setStatus(status);

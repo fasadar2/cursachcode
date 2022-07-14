@@ -18,7 +18,8 @@ public class Datelog {
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "idpersonal", nullable = false)
-    private Personal idpersonal;
+    //todo имя поля camelCase
+    private Personal idPersonal;
 
     public Integer getId() {
         return id;
@@ -45,11 +46,11 @@ public class Datelog {
     }
 
     public Personal getIdpersonal() {
-        return idpersonal;
+        return idPersonal;
     }
 
     public void setIdpersonal(Personal idpersonal) {
-        this.idpersonal = idpersonal;
+        this.idPersonal = idpersonal;
     }
 
 }

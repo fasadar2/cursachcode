@@ -1,6 +1,9 @@
 package com.example.practic2.model;
 
+import lombok.Builder;
+
 import java.time.LocalDate;
+@Builder
 
 public class ServiceMachineListModel {
     private String firstName;
@@ -12,19 +15,10 @@ public class ServiceMachineListModel {
     private String status;
     private LocalDate dos;
     private LocalDate dose;
+    //
+    // todo используй шаблон Builder для удобного создания объектов этого класса
 
-    public ServiceMachineListModel(String firstName,String secondName,String thirdName,Integer serial,Integer id,String status,LocalDate dos, LocalDate dose){
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.thirdName = thirdName;
-        this.serial = serial;
 
-        this.id = id;
-        this.status = status;
-        this.dos = dos;
-        this.dose = dose;
-    }
-    public ServiceMachineListModel(){}
 
     public String getFirstName() {
         return firstName;

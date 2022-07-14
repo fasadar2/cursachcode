@@ -17,10 +17,15 @@ public class ErrorListDAO {
     @Transactional
     public List<ErrorListModel> getErrorList(){
         List<Erorrmessage> erorrmessageList = (List<Erorrmessage>) errorListRepository.findAll();
-        List<ErrorListModel> errorListModels = erorrmessageList.stream().map(erorrmessage -> new ErrorListModel(
-                erorrmessage.getIddoctor().getFirstname(),erorrmessage.getIddoctor().getSecondname(),erorrmessage.getIddoctor().getThirdname(),
-                erorrmessage.getId(),erorrmessage.getCabinetid().getName(),erorrmessage.getDate(),erorrmessage.getMachineid().getSerial(),
-                erorrmessage.getMessage())).collect(Collectors.toList());
+        List<ErrorListModel> errorListModels = erorrmessageList.stream().map(erorrmessage ->ErrorListModel.builder()
+                .firstname(erorrmessage.getIddoctor().getFirstname())
+                .secondname(erorrmessage.getIddoctor().getSecondname())
+                .thirdname(erorrmessage.getIddoctor().getThirdname())
+                .id(erorrmessage.getId())
+                .cabinetnumber(erorrmessage.getCabinetid().getName())
+                .date(erorrmessage.getDate())
+                .serial(erorrmessage.getMachineid().getSerial())
+                .build()).collect(Collectors.toList());
         return errorListModels;
     }
 }

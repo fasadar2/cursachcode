@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class LoginDataDAO {
     @Autowired
     LoginRepository logrepos;
-    public boolean ConfirmLogPass(String login, String password){
+    public boolean confirmLogPass(String login, String password){
         boolean request = false;
         if(!logrepos.findDatelogByLoginAndPassword(login,password).isEmpty()){request= true; }
         else{request =  false; }

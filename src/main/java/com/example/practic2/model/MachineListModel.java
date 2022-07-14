@@ -1,8 +1,10 @@
 package com.example.practic2.model;
 
+import lombok.Builder;
+
 import java.sql.Date;
 import java.time.LocalDate;
-
+@Builder
 public class MachineListModel {
     private String type;
     private String recomendation;
@@ -12,17 +14,8 @@ public class MachineListModel {
     private LocalDate etoe;
     private String status;
     private Integer serial;
-    public MachineListModel(String type,String recomendation,LocalDate lastservice,LocalDate futerservice,LocalDate toe,LocalDate etoe, String status, Integer serial){
-        this.type = type;
-        this.recomendation = recomendation;
-        this.lastservice = lastservice;
-        this.futerservice = futerservice;
-        this.toe = toe;
-        this.etoe = etoe;
-        this.status = status;
-        this.serial = serial;
-    }
-    public MachineListModel(){}
+    //todo используй шаблон Builder для удобного создания объектов этого класса
+
 
     public String getType() {
         return type;

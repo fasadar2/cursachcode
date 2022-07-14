@@ -18,7 +18,7 @@ public class LoginController {
     @PostMapping(path = "/login",consumes = MediaType.APPLICATION_JSON_VALUE)
     public BasicReqestModel checkLogin(@RequestBody LoginReqestModel loginReqestModel){
         BasicReqestModel reqestModel = new BasicReqestModel();
-        if(logCheckService.CheckLogin(loginReqestModel.getLogin(), loginReqestModel.getPassword())){
+        if(logCheckService.checkLogin(loginReqestModel.getLogin(), loginReqestModel.getPassword())){
             reqestModel.setCode(1);
             reqestModel.setMessage("Вход успешен");
         }else {

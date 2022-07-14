@@ -11,11 +11,12 @@ public class Machineengineer {
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "idmachine", nullable = false)
-    private Machine idmachine;
+    //todo имя поля (и ниже по коду) camelCase
+    private Machine idMachine;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "idengineer", nullable = false)
-    private Personal idengineer;
+    private Personal idEngineer;
 
     public Integer getId() {
         return id;
@@ -26,19 +27,19 @@ public class Machineengineer {
     }
 
     public Machine getIdmachine() {
-        return idmachine;
+        return idMachine;
     }
 
     public void setIdmachine(Machine idmachine) {
-        this.idmachine = idmachine;
+        this.idMachine = idmachine;
     }
 
     public Personal getIdengineer() {
-        return idengineer;
+        return idEngineer;
     }
 
     public void setIdengineer(Personal idengineer) {
-        this.idengineer = idengineer;
+        this.idEngineer = idengineer;
     }
 
 }

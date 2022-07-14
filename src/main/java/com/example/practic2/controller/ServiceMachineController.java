@@ -21,14 +21,14 @@ public class ServiceMachineController {
     ServiceMachineService service;
 
     @GetMapping(path = "/getServiceList")
-    public List<ServiceMachineListModel> GetServiceMachineList(){
+    public List<ServiceMachineListModel> getServiceMachineList(){
         return service.serviceMachineListModels();
     }
     @PostMapping(path = "/NewServiceMachine",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public BasicReqestModel NewServiceMachine(@RequestBody ServiceMachineReciveModel model){
+    public BasicReqestModel newServiceMachine(@RequestBody ServiceMachineReciveModel model){
         BasicReqestModel reqestModel = new BasicReqestModel();
         if(
-                service.NewServiceMachine(model.getStatus(), model.getMachineId(), model.getErrorId(), model.getTOEE(),model.getTOES())
+                service.newServiceMachine(model.getStatus(), model.getMachineId(), model.getErrorId(), model.getTOEE(),model.getTOES())
         ){
             reqestModel.setCode(1);
             reqestModel.setMessage("Данные успешно обновлены");
@@ -40,10 +40,10 @@ public class ServiceMachineController {
     }
 
     @PostMapping(path = "/UpdateServiceMachine",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public BasicReqestModel UpdateServiceMachine(@RequestBody ServiceMachineUpdateReciveModel model){
+    public BasicReqestModel updateServiceMachine(@RequestBody ServiceMachineUpdateReciveModel model){
         BasicReqestModel reqestModel = new BasicReqestModel();
         if(
-                service.UpdateServiceMachine(model.getStatus(), model.getId(), model.getTOES())
+                service.updateServiceMachine(model.getStatus(), model.getId(), model.getTOES())
         ){
             reqestModel.setCode(1);
             reqestModel.setMessage("Данные успешно обновлены");

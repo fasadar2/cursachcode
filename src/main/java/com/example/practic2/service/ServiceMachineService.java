@@ -16,20 +16,20 @@ public class ServiceMachineService {
     public List<ServiceMachineListModel> serviceMachineListModels(){
         return serviceMachineDAO.serviceMachineListModels();
     }
-   public boolean  NewServiceMachine(String status, Integer id, Integer errorId, LocalDate TOSS, LocalDate TOES){
+   public boolean  newServiceMachine(String status, Integer id, Integer errorId, LocalDate TOSS, LocalDate TOES){
        boolean request = false;
        if(id != null){
-           serviceMachineDAO.NewMachineService(status, id, errorId, TOSS, TOES);
+           serviceMachineDAO.newMachineService(status, id, errorId, TOSS, TOES);
            request = true;
        }else {
            request = false;
        }
        return request;
    }
-    public boolean  UpdateServiceMachine(String status, Integer id,  LocalDate TOES){
+    public boolean  updateServiceMachine(String status, Integer id,  LocalDate TOES){
         boolean request = false;
         if(id != null){
-            serviceMachineDAO.UpdateServicemachine(status, id, TOES);
+            serviceMachineDAO.updateServicemachine(status, id, TOES);
             request = true;
         }else {
             request = false;

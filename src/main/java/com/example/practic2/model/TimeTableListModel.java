@@ -1,7 +1,9 @@
 package com.example.practic2.model;
 
-import java.time.Instant;
+import lombok.Builder;
 
+import java.time.Instant;
+@Builder
 public class TimeTableListModel {
     private String cabinetNumber;
     private String firstName;
@@ -9,16 +11,9 @@ public class TimeTableListModel {
     private String thirdName;
     private Instant date;
     private String typeMachine;
+    //todo используй шаблон Builder для удобного создания объектов этого класса
 
-    public TimeTableListModel(String cabinetNumber,String firstName,String secondName,String thirdName,Instant date,String typeMachine){
-        this.cabinetNumber = cabinetNumber;
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.thirdName = thirdName;
-        this.date = date;
-        this.typeMachine = typeMachine;
-    }
-    public TimeTableListModel(){}
+
 
     public String getCabinetNumber() {
         return cabinetNumber;

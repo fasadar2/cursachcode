@@ -15,15 +15,16 @@ public class Timetable {
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "machineid", nullable = false)
-    private Machine machineid;
+    //todo имя поля (и ниже по коду) camelCase
+    private Machine machineId;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "idpersonal", nullable = false)
-    private Personal idpersonal;
+    private Personal idPersonal;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "idcabinet", nullable = false)
-    private Cabinet idcabinet;
+    private Cabinet idCabinet;
 
     public Integer getId() {
         return id;
@@ -42,27 +43,27 @@ public class Timetable {
     }
 
     public Machine getMachineid() {
-        return machineid;
+        return machineId;
     }
 
     public void setMachineid(Machine machineid) {
-        this.machineid = machineid;
+        this.machineId = machineid;
     }
 
     public Personal getIdpersonal() {
-        return idpersonal;
+        return idPersonal;
     }
 
     public void setIdpersonal(Personal idpersonal) {
-        this.idpersonal = idpersonal;
+        this.idPersonal = idpersonal;
     }
 
     public Cabinet getIdcabinet() {
-        return idcabinet;
+        return idCabinet;
     }
 
     public void setIdcabinet(Cabinet idcabinet) {
-        this.idcabinet = idcabinet;
+        this.idCabinet = idcabinet;
     }
 
 }

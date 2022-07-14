@@ -18,10 +18,14 @@ public class TimeTableDAO {
     @Transactional
     public List<TimeTableListModel> getTimeTableList(){
         List<Timetable> timetables = (List<Timetable>) timeTableRepository.findAll();
-        List<TimeTableListModel> timeTableListModels = timetables.stream().map(timetable -> new TimeTableListModel(
-                timetable.getIdcabinet().getName(),timetable.getIdpersonal().getFirstname(),timetable.getIdpersonal().getSecondname(),
-                timetable.getIdpersonal().getThirdname(),timetable.getDate(),timetable.getMachineid().getTypeid().getName()
-        )).collect(Collectors.toList());
+        List<TimeTableListModel> timeTableListModels = timetables.stream().map(timetable -> TimeTableListModel.builder()
+                .cabinetNumber(timetable.getIdcabinet().getName())
+                .firstName(timetable.getIdpersonal().getFirstname())
+                .secondName(timetable.getIdpersonal().getSecondname())
+                .thirdName(timetable.getIdpersonal().getThirdname())
+                .date(timetable.getDate())
+                .typeMachine(timetable.getMachineid().getTypeid().getName())
+                .build()).collect(Collectors.toList());
         return timeTableListModels;
     }
 }

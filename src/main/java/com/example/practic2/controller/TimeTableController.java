@@ -14,7 +14,8 @@ public class TimeTableController {
     TimeTableService timeTableService;
 
     @GetMapping(path = "/getTimeTableList")
-    public List<TimeTableListModel> GetTimeTableList(){
+
+    public List<TimeTableListModel> getTimeTableList(){
         return timeTableService.getTimeTableModel();
     }
 }

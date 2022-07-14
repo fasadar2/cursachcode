@@ -9,7 +9,7 @@ public class LogCheckService {
     @Autowired
     LoginDataDAO loginDataDAO;
 
-    public boolean CheckLogin(String login,String password){
-        return loginDataDAO.ConfirmLogPass(login,password);
+    public boolean checkLogin(String login,String password){
+        return loginDataDAO.confirmLogPass(login,password);
     }
 }

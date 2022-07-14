@@ -16,17 +16,18 @@ public class Machine {
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "typeid", nullable = false)
-    private Machinetype typeid;
+    private Machinetype typeId;
 
     @Column(name = "recommendation", nullable = false)
     @Type(type = "org.hibernate.type.TextType")
     private String recommendation;
 
     @Column(name = "lastservice")
-    private LocalDate lastservice;
+    //todo имя поля (и ниже по коду) camelCase
+    private LocalDate lastService;
 
     @Column(name = "futerservice", nullable = false)
-    private LocalDate futerservice;
+    private LocalDate futerService;
 
     @Column(name = "toe", nullable = false)
     private LocalDate toe;
@@ -50,11 +51,11 @@ public class Machine {
     }
 
     public Machinetype getTypeid() {
-        return typeid;
+        return typeId;
     }
 
     public void setTypeid(Machinetype typeid) {
-        this.typeid = typeid;
+        this.typeId = typeid;
     }
 
     public String getRecommendation() {
@@ -66,19 +67,19 @@ public class Machine {
     }
 
     public LocalDate getLastservice() {
-        return lastservice;
+        return lastService;
     }
 
     public void setLastservice(LocalDate lastservice) {
-        this.lastservice = lastservice;
+        this.lastService = lastservice;
     }
 
     public LocalDate getFuterservice() {
-        return futerservice;
+        return futerService;
     }
 
     public void setFuterservice(LocalDate futerservice) {
-        this.futerservice = futerservice;
+        this.futerService = futerservice;
     }
 
     public LocalDate getToe() {

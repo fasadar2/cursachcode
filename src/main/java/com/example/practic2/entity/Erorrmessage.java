@@ -15,15 +15,16 @@ public class Erorrmessage {
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "iddoctor", nullable = false)
-    private Personal iddoctor;
+    //todo имя поля (и ниже по коду) camelCase
+    private Personal idDoctor;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "machineid", nullable = false)
-    private Machine machineid;
+    private Machine machineId;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "cabinetid", nullable = false)
-    private Cabinet cabinetid;
+    private Cabinet cabinetId;
 
     @Column(name = "date", nullable = false)
     private LocalDate date;
@@ -41,27 +42,27 @@ public class Erorrmessage {
     }
 
     public Personal getIddoctor() {
-        return iddoctor;
+        return idDoctor;
     }
 
     public void setIddoctor(Personal iddoctor) {
-        this.iddoctor = iddoctor;
+        this.idDoctor = iddoctor;
     }
 
     public Machine getMachineid() {
-        return machineid;
+        return machineId;
     }
 
     public void setMachineid(Machine machineid) {
-        this.machineid = machineid;
+        this.machineId = machineid;
     }
 
     public Cabinet getCabinetid() {
-        return cabinetid;
+        return cabinetId;
     }
 
     public void setCabinetid(Cabinet cabinetid) {
-        this.cabinetid = cabinetid;
+        this.cabinetId = cabinetid;
     }
 
     public LocalDate getDate() {

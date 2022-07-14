@@ -14,6 +14,6 @@ public class ErrorListController {
     ErrorListService errorListService;
    @GetMapping(value = "/getErrorList")
     public List<ErrorListModel> getErrorList(){
-       return errorListService.GetErrorList();
+       return errorListService.getErrorList();
    }
 }

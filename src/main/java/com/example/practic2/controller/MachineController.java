@@ -24,7 +24,7 @@ public class MachineController {
     @PostMapping(path = "/machineUpdateStatus",consumes = MediaType.APPLICATION_JSON_VALUE)
     public BasicReqestModel updateStatus(@RequestBody MachineStatusReqestModel machineStatusReqestModel){
         BasicReqestModel reqestModel = new BasicReqestModel();
-        if(machineService.UpdateMachineStatus(machineStatusReqestModel.getSerial(), machineStatusReqestModel.getStatus())){
+        if(machineService.updateMachineStatus(machineStatusReqestModel.getSerial(), machineStatusReqestModel.getStatus())){
             reqestModel.setCode(1);
             reqestModel.setMessage("Данные успешно обновлены");
         }else {
@@ -36,7 +36,7 @@ public class MachineController {
     @PostMapping(path = "/machineUpdateRecomendation", consumes = MediaType.APPLICATION_JSON_VALUE)
     public BasicReqestModel updateRecomendation(@RequestBody MachineRecomendationReqestModel machineRecomendationReqestModel){
         BasicReqestModel reqestModel = new BasicReqestModel();
-        if(machineService.UpdateMachineRecomendation(machineRecomendationReqestModel.getSerial(),
+        if(machineService.updateMachineRecomendation(machineRecomendationReqestModel.getSerial(),
                 machineRecomendationReqestModel.getRecomendation())){
             reqestModel.setCode(1);
             reqestModel.setMessage("Данные успешно обновлены");
@@ -49,7 +49,7 @@ public class MachineController {
     @PostMapping(path = "/machineTOUpdate",consumes = MediaType.APPLICATION_JSON_VALUE)
     public BasicReqestModel updateTO(@RequestBody MachineTOUpdateRequestModel machineTOUpdateRequestModel){
         BasicReqestModel reqestModel = new BasicReqestModel();
-        if(machineService.UpdateLastServiceMachine(machineTOUpdateRequestModel.getSerial(),
+        if(machineService.updateLastServiceMachine(machineTOUpdateRequestModel.getSerial(),
                 machineTOUpdateRequestModel.getDate())){
             reqestModel.setCode(1);
             reqestModel.setMessage("Данные успешно обновлены");
@@ -60,10 +60,10 @@ public class MachineController {
         return reqestModel;
     }
     @PostMapping(path = "/newMachine",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public BasicReqestModel NewMachine(@RequestBody MachineReciveModel model){
+    public BasicReqestModel newMachine(@RequestBody MachineReciveModel model){
         BasicReqestModel reqestModel = new BasicReqestModel();
         if(
-                machineService.NewMachine(model.getSerial(), model.getDateNTO(),model.getDSE(),model.getDEE(), model.getRecomendation(), model.getType())
+                machineService.newMachine(model.getSerial(), model.getDateNTO(),model.getDSE(),model.getDEE(), model.getRecomendation(), model.getType())
         ){
             reqestModel.setCode(1);
             reqestModel.setMessage("Данные успешно обновлены");
